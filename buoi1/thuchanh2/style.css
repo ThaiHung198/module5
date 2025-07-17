@@ -1,0 +1,110 @@
+/* ---- Bảng màu được cung cấp trong bài thực hành ---- */
+/* Bậc 1: #00ADEE (Màu chủ đạo) */
+/* Bậc 2: #00B2EF */
+/* Bậc 3: #00B8F1 */
+/* Bậc 4: #00BFF2 */
+/* Bậc 5: #44C7F4 */
+/* Bậc 6: #6DCEF5 */
+/* Bậc 7: #8DD7F7 */
+/* Bậc 8: #ABEOF9 */
+/* Bậc 9: #C6E9FA */
+/* Bậc 10: #E1F3FC */
+
+/* ---- Thiết lập chung ---- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    /* --- BƯỚC 2: THAY ĐỔI MÀU NỀN --- */
+    background-color: #00BFF2; /* Màu bậc 4 */
+    color: #333; /* Đổi màu chữ mặc định sang đen để dễ đọc trên nền xanh nhạt */
+}
+
+header, footer {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1); /* Làm cho header/footer hơi khác biệt */
+}
+
+/* ---- BƯỚC 4: ĐỔI MÀU NỀN PHẦN NỘI DUNG ---- */
+.content-area {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #FFFFFF; /* Nền trắng để nội dung dễ đọc nhất */
+    /* Hoặc bạn có thể dùng màu bậc 10: #E1F3FC */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #00ADEE; /* Dùng màu chủ đạo cho tiêu đề */
+}
+
+/* ---- Cấu trúc lưới sản phẩm ---- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Quan trọng để bo góc hoạt động đúng với ảnh */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-container {
+    position: relative; /* Cần thiết để định vị badge */
+}
+
+.product-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-image-container-placeholder {
+    height: 235px;
+    background-color: #e0e0e0;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+/* --- BƯỚC 3: THAY ĐỔI MÀU NỀN PHẦN ON SALE/PREVIEW --- */
+.sale-badge, .preview-badge {
+    position: absolute;
+    color: white;
+    padding: 8px 0;
+    font-weight: bold;
+    text-align: center;
+    width: 150px; /* Độ rộng của dải băng */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Áp dụng màu cho từng badge và xoay nó */
+.sale-badge {
+    background-color: #00ADEE; /* Màu bậc 1 để tạo điểm nhấn */
+    top: 20px;
+    left: -40px;
+    transform: rotate(-45deg);
+}
+
+.preview-badge {
+    background-color: #00B2EF; /* Màu bậc 2 (lựa chọn thay thế) */
+    top: 20px;
+    left: -40px;
+    transform: rotate(-45deg);
+}
